@@ -1,9 +1,25 @@
+import React, { useEffect } from 'react';
 import { Text, View } from "react-native";
 
 export default function Index() {
+
+  useEffect(() => {
+    console.log("Entre en pantalla");
+    getPokemons();
+  }, []);
+
+  const getPokemons = async () => {
+    {
+      const URL = "https://pokeapi.co/api/v2/pokemon?limit=100&offset=0";
+      const response = await fetch(URL);
+      const data = await response.json();
+      console.log(data);
+    }
+  };
+
   return (
     <View>
-      <Text>Edit app/index.tsx to edit this screen.</Text>
+      <Text>Axel Alonso Campos Medina</Text>
     </View>
   );
 }
